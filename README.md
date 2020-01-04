@@ -12,4 +12,4 @@ rem+flex布局方案
   * 引入koa及koa的中间件 来  创建和维护一个HTTP服务器
   * 使用 node server.js运行服务器
 * 创建数据库
-### 详细信息请看笔记
+#### 详细信息请看[笔记](https://github.com/cc-wave/movies/blob/master/%E7%AC%94%E8%AE%B0)
