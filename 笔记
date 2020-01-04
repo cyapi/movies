@@ -1,0 +1,90 @@
+小莱电影开发
+一：初始化一个vue前端项目
+    vue init webpack web
+二：安装其它项目所需依赖：
+
+       下载:  npm i mint-ui -S
+       引入：在main.js中
+    import Vue from 'vue'（已有）
+    import MintUI from 'mint-ui'
+    import 'mint-ui/lib/style.css'
+    import App from './App' （已有）
+    Vue.use(MintUI)
+    
+        下载：npm i less less-loader -S
+         作用是在项目中使用less语法写样式
+         
+        下载：npm i axios -S
+         作用是在项目中 向服务器端发起http请求
+     import axios from "axios"
+     axios.defaults.baseURL="http://127.0.0.1:8800"
+     Vue.prototype.$http=axios
+ 
+ 三：处理初始的vue项目
+    1.在index.html中引入 rem的js代码
+    2.处理app.vue中的多余结构和样式
+    3.在src/下新建pages/用来放所有页面
+    4.在pages/下新建出home.vue组件，reg.vue组件
+    5.配置路由
+    
+四： 开发reg注册组件
+    1.组件开发（静态页）及样式
+    2.功能：收集数据、验证、发送http请求
+    3.要把收集好的数据发送给服务器
+    4.由于是跨域访问 ， 每一次在访问地址必须要指定http://127.0.0.1:8800/reg比较麻烦
+             我们可以配置axios的默认请求地址
+             
+五：开发http服务器   (server)
+    1.在小莱电影中建一个server的项目，用来搭建服务器
+    2.npm init -y 初始化一个项目，作用是产生一个package.json
+    3.把后端项目中要用到的所有第三方模块下载：
+       npm i koa koa-static koa-router koa-body koa2-cors mongoose -S
+    4.在server项目中，建一个server.js文件，用来搭建服务器（作为后端的入口文件）
+    5.引入koa及koa的中间件 来  创建和维护一个HTTP服务器
+    6.使用 node server.js运行服务器
+    
+    
+    http://127.0.0.1:8800/reg
+    Access-Control-Allow-Origin
+           权限- 控制 -允许-来源
+           我们当前的地址是127.0.0.1:8101，说明没有权限访问来源于127.0.0.1:8800的数据
+    127.0.0.1:8101-》127.0.0.1:8800跨域访问ip或端口有任意不一致的情况都属于跨域访问
+           默认情况下，web网站为了安全性，是不允许跨域访问的
+    cors就是一种跨域解决方案：它是一个资源共享器
+    
+六：操作数据库
+    1.server项目中建一个js文件
+    2.引入一个mongoose（它是一个node中的用来操作mongodb数据库的第三方模块）
+    3.连接数据库
+    (记得：启动mongodb数据库：在任意在任何地方，打开命令行中执行mongod --dbpath=D:\AAAAA)
+    4.创建 数据表
+    (记得：一定要创建表规则)
+    
+七：home页的开发
+    1.写静态页
+    2.观察页面动态信息，去完成monggo
+    3.在表中写入一些初始化信息
+    4.前端home页发起的http请求
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+       
