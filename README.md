@@ -12,3 +12,4 @@ rem+flex布局方案
   * 引入koa及koa的中间件 来  创建和维护一个HTTP服务器
   * 使用 node server.js运行服务器
 * 创建数据库
+### 详细信息请看笔记
